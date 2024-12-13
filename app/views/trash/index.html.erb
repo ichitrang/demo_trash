@@ -1,0 +1,11 @@
+<h1>Trash</h1>
+<% @trashs.each do |trash| %>
+    <%if trash.img.attached?%>
+    <%# <%=image_tag url_for(trash.img.variant(resize:"100x100"))  %>
+    <%= image_tag image.img%>
+    <%= link_to "Restore",trash_restore_path(trash.id)%>
+    <%= link_to "Destroy",trash_path(trash.id),data: {turbo_method: :delete,turbo_confirm: "Are you sure" }%>
+    <%end%>
+<%end%>
+
+
